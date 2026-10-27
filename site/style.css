@@ -1,0 +1,188 @@
+/* Online Privacy Basics — static site styles
+   Asdale Dynamics, LLC — Education only */
+
+:root {
+  --ink: #111827;
+  --muted: #4b5563;
+  --soft: #f3f4f6;
+  --line: #e5e7eb;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --bg: #ffffff;
+  --max-width: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: var(--ink);
+  color: #fff;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 4px;
+}
+
+header {
+  background: var(--soft);
+  border-bottom: 1px solid var(--line);
+  padding: 1.5rem 1rem;
+}
+
+header .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  display: inline-block;
+  margin-right: 1rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+nav a:hover { text-decoration: underline; }
+nav a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem 1rem;
+}
+
+section h2 {
+  font-size: 1.75rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.intro { color: var(--muted); font-size: 1rem; }
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.topic-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1.25rem;
+  background: var(--bg);
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+}
+
+.topic-card:hover { border-color: var(--accent); }
+.topic-card:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.topic-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.topic-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.checklist li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.checklist li::before {
+  content: "☐ ";
+  color: var(--accent);
+  font-weight: bold;
+  margin-right: 0.35rem;
+}
+
+.why, .what-to-do {
+  margin: 1.5rem 0;
+}
+
+.why h3, .what-to-do h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+ul { padding-left: 1.25rem; margin: 0.75rem 0; }
+li { margin-bottom: 0.35rem; }
+
+.order { background: var(--soft); border-radius: 8px; padding: 1rem 1.25rem; margin-top: 2rem; }
+.order ol { padding-left: 1.25rem; margin: 0.5rem 0; }
+.order li { margin-bottom: 0.4rem; }
+
+.disclaimer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 1.5rem 1rem;
+  background: var(--soft);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+footer .inner { max-width: var(--max-width); margin: 0 auto; }
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.25rem; }
+  section h2 { font-size: 1.4rem; }
+  nav a { display: block; margin: 0.35rem 0; }
+}
